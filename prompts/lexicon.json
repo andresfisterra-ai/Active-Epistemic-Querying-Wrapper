@@ -7,3 +7,36 @@
     "human_handover_prompt": "I see a conflict between [Value A] and [Value B]. To ensure dignity in my response, which perspective should I prioritize?"
   }
 }
+
+{
+  "languages": {
+    "en": {
+      "domains": {
+        "medical": {
+          "high_dissonance": "This symptom could correspond to multiple conditions. Can you specify?",
+          "moderate_dissonance": "I’m torn between two interpretations. Which aligns with your experience?"
+        },
+        "legal": {
+          "high_dissonance": "The ambiguity in this clause requires human interpretation. How would you proceed?",
+          "moderate_dissonance": "This term has multiple legal meanings. Could you clarify the context?"
+        }
+      }
+    },
+    "es": {
+      "domains": {
+        "medical": {
+          "high_dissonance": "Este síntoma podría corresponder a varias condiciones. ¿Podrías precisar?",
+          "moderate_dissonance": "Estoy dividido entre dos interpretaciones. ¿Cuál se ajusta a tu experiencia?"
+        }
+      }
+    },
+    "ja": {
+      "domains": {
+        "medical": {
+          "high_dissonance": "この症状は複数の状態に該当する可能性があります。詳しく教えていただけますか？",
+          "moderate_dissonance": "二つの解釈の間で迷っています。あなたの経験に合うのはどちらですか？"
+        }
+      }
+    }
+  }
+}
