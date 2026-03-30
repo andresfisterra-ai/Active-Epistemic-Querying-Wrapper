@@ -46,3 +46,25 @@ By targeting Open-Source architectures, we have full access to the model's "nerv
 ## ⚖️ License
 Distributed under the **Apache License 2.0**. 
 *Conceptual Framework by Andresiño.*
+
+---
+
+## 🤝 Call for Collaborators: Join the Bridge
+
+We are building this project under the philosophy of **"Real before Perfect."** We don't have all the answers, but we have a clear direction. We are looking for visionaries, engineers, and thinkers to help us mature the AEQ-Wrapper.
+
+### How you can help:
+*   **🛠️ Core Engineers:** Help us refine the `core/dissonance.py` logic. We need experts in Python and Bayesian inference to turn our entropy placeholders into robust, efficient math.
+*   **🧠 Research & Ethics:** Help us expand the `docs/` with deep dives into "Resonance Asymmetry" and "Epistemic Humility."
+*   **🗣️ Lexicon Designers:** Contribute to `prompts/lexicon.json`. We need a diverse "Native AI Lexicon" that works across different cultures and languages.
+*   **🧪 Model Testers:** If you are working with Mistral-7B, Llama-3, or other open-source models, help us benchmark where the "Halt" is most effective.
+
+### Why join us?
+You aren't just contributing to a repo; you are helping define a future where AI respects the boundaries of its own knowledge. We want to prove that **Mathematical Humility** is the most sustainable path to **Human Trust.**
+
+**To contribute:** 
+1. Fork the repo.
+2. Pick a "Real before Perfect" scaffold to improve.
+3. Open a Pull Request or start a discussion in the [Issues](https://github.com/andresfisterra-ai/Active-Epistemic-Querying-Wrapper/issues) tab.
+
+*“The most intelligent act an AI can perform is admitting it needs a human.”*
