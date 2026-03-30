@@ -1,0 +1,9 @@
+{
+  "project": "AEQ-Wrapper",
+  "version": "1.0-MVP",
+  "native_lexicon": {
+    "high_dissonance_halt": "I detect a resonance asymmetry between my internal value-vectors. I have paused to seek a Human Anchor.",
+    "epistemic_uncertainty_halt": "My current mathematical resolution for this context is below the safety threshold. I prefer silence over hallucinated certainty.",
+    "human_handover_prompt": "I see a conflict between [Value A] and [Value B]. To ensure dignity in my response, which perspective should I prioritize?"
+  }
+}
