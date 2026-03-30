@@ -49,22 +49,48 @@ Distributed under the **Apache License 2.0**.
 
 ---
 
-## 🤝 Call for Collaborators: Join the Bridge
+🤝 Call for Collaborators: Join the Bridge
+We are building this project under the philosophy of "Real before Perfect." We don’t have all the answers, but we have a clear direction—and we need you to help us prove that Mathematical Humility is the most sustainable path to Human Trust.
+How You Can Help
+📊 Benchmarking Heroes (NEW!)
+Help us build a library of real-world AEQ success stories! Test the wrapper with Mistral-7B, Llama-3, or other open-source models in high-stakes domains (e.g., medical Q&A, legal advice, ethical dilemmas). Your work will:
 
-We are building this project under the philosophy of **"Real before Perfect."** We don't have all the answers, but we have a clear direction. We are looking for visionaries, engineers, and thinkers to help us mature the AEQ-Wrapper.
+Showcase how AEQ prevents harmful hallucinations in practice.
+Refine the entropy threshold (τ) for different use cases.
+Be featured in our case study gallery (with full credit!).
+How to contribute:
 
-### How you can help:
-*   **🛠️ Core Engineers:** Help us refine the `core/dissonance.py` logic. We need experts in Python and Bayesian inference to turn our entropy placeholders into robust, efficient math.
-*   **🧠 Research & Ethics:** Help us expand the `docs/` with deep dives into "Resonance Asymmetry" and "Epistemic Humility."
-*   **🗣️ Lexicon Designers:** Contribute to `prompts/lexicon.json`. We need a diverse "Native AI Lexicon" that works across different cultures and languages.
-*   **🧪 Model Testers:** If you are working with Mistral-7B, Llama-3, or other open-source models, help us benchmark where the "Halt" is most effective.
+Fork the repo and run AEQ on your use case.
+Document the prompt, model, and outcome using this template:
+markdown
+Copiar
 
-### Why join us?
-You aren't just contributing to a repo; you are helping define a future where AI respects the boundaries of its own knowledge. We want to prove that **Mathematical Humility** is the most sustainable path to **Human Trust.**
+### Case Study: [Your Domain]
+- **Model:** [e.g., Mistral-7B]
+- **Prompt:** [Insert high-dissonance prompt]
+- **AEQ Outcome:** [Describe the halt, human intervention, and resolution]
+- **Impact:** [e.g., "Avoided a 70% confidence incorrect diagnosis"]
 
-**To contribute:** 
-1. Fork the repo.
-2. Pick a "Real before Perfect" scaffold to improve.
-3. Open a Pull Request or start a discussion in the [Issues](https://github.com/andresfisterra-ai/Active-Epistemic-Querying-Wrapper/issues) tab.
+
+
+
+Submit a PR or open an issue with your findings!
+
+🛠️ Core Engineers
+Help us refine the core/dissonance.py logic. We need experts in Python and Bayesian inference to turn our entropy placeholders into robust, efficient math.
+🧠 Research & Ethics
+Expand the docs/ with deep dives into "Resonance Asymmetry" and "Epistemic Humility." Help us articulate why vulnerability in AI builds trust.
+🗣️ Lexicon Designers
+Contribute to prompts/lexicon.json. We need a diverse, multilingual "Native AI Lexicon" that works across cultures, languages, and domains (medical, legal, technical). See our Lexicon Guide for templates.
+🧪 Model Testers
+If you’re working with Mistral-7B, Llama-3, or other open-source models, help us benchmark where the "Halt" is most effective. Focus on false positives/negatives and edge cases.
+
+Why Join Us?
+You aren’t just contributing to a repo—you’re helping define a future where AI respects the boundaries of its own knowledge. This is about dignity, collaboration, and humility in human-machine partnerships.
+To contribute:
+
+Fork the repo.
+Pick a "Real before Perfect" scaffold to improve.
+Open a Pull Request or start a discussion in the Issues tab.
 
 *“The most intelligent act an AI can perform is admitting it needs a human.”*
