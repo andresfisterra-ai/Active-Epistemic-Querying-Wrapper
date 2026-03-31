@@ -1,0 +1,15 @@
+## 🌀 The "Deep Breath" Protocol (Cascade Prevention)
+
+To ensure the AEQ-Wrapper remains a helpful partner and not a disruptive "hallway monitor," we implement a **State-Aware Monitoring** system. This prevents "Feedback Cascades" where the model and wrapper get stuck in an intervention loop.
+
+### The AEQ State Machine:
+1. **NORMAL:** Active monitoring of Normalized Logit Entropy ($H_{norm}$).
+2. **POST-INTERVENTION:** Once a Human Anchor is engaged, the wrapper stays quiet to allow for fluid human-AI dialogue.
+3. **COOLDOWN:** If the system detects a "Cascade" (2+ halts in short succession), it enters a temporary "Deep Breath" mode.
+
+### Recovery Logic
+During **COOLDOWN**, the wrapper monitors entropy passively. It will only reactivate once the signal reaches a state of "Deep Calm," defined as:
+
+$$H_{norm} < (\tau_{base} \times 0.5)$$
+
+This must hold true for a **Stabilization Window** of $M=50$ tokens. This ensures the "Mathematical Dust" has settled before the protection layer re-engages.
