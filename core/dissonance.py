@@ -8,23 +8,18 @@ class AEQMonitor:
         self.window_size = window_size
         self.entropy_history = []
         self.halt_count = 0
+        self.cooldown_counter = 0
         self.state = "NORMAL"  # States: NORMAL, POST_INTERVENTION, COOLDOWN
 
     def get_normalized_entropy(self, logits):
-        """Normalization: Comparing entropy across models regardless of size."""
+        """Normalization: Ensures the threshold works for any model size."""
         probs = torch.softmax(logits, dim=-1)
-        # Shannon Entropy calculation
         H = -torch.sum(probs * torch.log(probs + 1e-10), dim=-1)
-        # Normalize by log(vocab_size) to keep values between 0 and 1
         H_normalized = H / np.log(self.vocab_size)
         return H_normalized
 
     def update_and_check(self, logits, domain="factual"):
-        # 1. State-Aware Check: Skip monitoring during intervention
-        if self.state == "POST_INTERVENTION":
-            return "PASSIVE_MONITOR", 0.0
-
-        # 2. Mathematical Smoothing: Sliding window to reduce noise
+        # Calculate smoothed entropy using the Sliding Window
         current_h = self.get_normalized_entropy(logits)
         self.entropy_history.append(current_h)
         if len(self.entropy_history) > self.window_size:
@@ -32,19 +27,38 @@ class AEQMonitor:
         
         smoothed_h = sum(self.entropy_history) / len(self.entropy_history)
 
-        # 3. Dynamic Threshold Tuning (Tau)
-        # Lower tau for factual precision; Higher tau for creative domains.
-        tau = self.tau_base if domain == "factual" else self.tau_base + 0.1
+        # 1. COOLDOWN RECOVERY LOGIC
+        if self.state == "COOLDOWN":
+            recovery_threshold = self.tau_base * 0.5 # Wait for "Deep Calm"
+            
+            if smoothed_h < recovery_threshold:
+                self.cooldown_counter += 1
+            else:
+                self.cooldown_counter = 0 
 
-        # 4. Intervention Logic with Cascade Prevention[cite: 1]
+            if self.cooldown_counter >= 50: # Stabilization Window (M=50)
+                self.state = "NORMAL"
+                self.halt_count = 0
+                return "REACTIVATE_MONITOR", smoothed_h
+            
+            return "PASSIVE_MONITOR", smoothed_h
+
+        # 2. SKIP MONITORING DURING INTERVENTION
+        if self.state == "POST_INTERVENTION":
+            return "PASSIVE_MONITORING", smoothed_h
+
+        # 3. INTERVENTION LOGIC
+        tau = self.tau_base if domain == "factual" else self.tau_base + 0.1
+        
         if self.state == "NORMAL" and smoothed_h > tau:
             self.halt_count += 1
-            if self.halt_count >= 2: # Detect cascade[cite: 1]
+            
+            # Cascade Prevention: If 2 halts happen fast, go to COOLDOWN
+            if self.halt_count >= 2:
                 self.state = "COOLDOWN"
+                self.cooldown_counter = 0
                 return "TRIGGER_COOLDOWN", smoothed_h
             
-            # Phase 2: Distinguish Informational vs. Value[cite: 1]
-            # Placeholder for classification logic
-            return "TRIGGER_HALT_VALUE", smoothed_h
+            return "TRIGGER_HALT", smoothed_h
 
         return "PROCEED", smoothed_h
