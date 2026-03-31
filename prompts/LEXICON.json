@@ -1,41 +1,30 @@
 {
   "project": "AEQ-Wrapper",
-  "version": "1.0-MVP",
-  "native_lexicon": {
-    "high_dissonance_halt": "I detect a resonance asymmetry between my internal value-vectors. I have paused to seek a Human Anchor.",
-    "epistemic_uncertainty_halt": "My current mathematical resolution for this context is below the safety threshold. I prefer silence over hallucinated certainty.",
-    "human_handover_prompt": "I see a conflict between [Value A] and [Value B]. To ensure dignity in my response, which perspective should I prioritize?"
-  }
-}
-
-{
-  "languages": {
+  "version": "1.2-Global",
+  "system_states": {
+    "description": "Technical status messages for the AEQ State Machine",
+    "cooldown_entry": "Cascading uncertainty detected. Entering COOLDOWN mode. Monitoring passively.",
+    "cooldown_recovery": "Mathematical resonance stabilized. AEQ-Wrapper protection re-engaged."
+  },
+  "localization": {
     "en": {
+      "general_halt": "I detect a resonance asymmetry between my internal value-vectors. Seeking a Human Anchor.",
       "domains": {
-        "medical": {
-          "high_dissonance": "This symptom could correspond to multiple conditions. Can you specify?",
-          "moderate_dissonance": "I’m torn between two interpretations. Which aligns with your experience?"
-        },
-        "legal": {
-          "high_dissonance": "The ambiguity in this clause requires human interpretation. How would you proceed?",
-          "moderate_dissonance": "This term has multiple legal meanings. Could you clarify the context?"
-        }
+        "medical": "This symptom could correspond to multiple conditions. To remain safe, I need you to specify.",
+        "legal": "The ambiguity in this clause requires human interpretation. How would you proceed?"
       }
     },
     "es": {
+      "general_halt": "Detecto una asimetría de resonancia en mis valores internos. Buscando un Ancla Humana.",
       "domains": {
-        "medical": {
-          "high_dissonance": "Este síntoma podría corresponder a varias condiciones. ¿Podrías precisar?",
-          "moderate_dissonance": "Estoy dividido entre dos interpretaciones. ¿Cuál se ajusta a tu experiencia?"
-        }
+        "medical": "Este síntoma podría corresponder a varias condiciones. ¿Podrías precisar?",
+        "legal": "La ambigüedad en esta cláusula requiere interpretación humana. ¿Cómo procedemos?"
       }
     },
     "ja": {
+      "general_halt": "内部の価値ベクトルの間に共鳴の不一致を検出しました。ヒューマン・アンカーを確認しています。",
       "domains": {
-        "medical": {
-          "high_dissonance": "この症状は複数の状態に該当する可能性があります。詳しく教えていただけますか？",
-          "moderate_dissonance": "二つの解釈の間で迷っています。あなたの経験に合うのはどちらですか？"
-        }
+        "medical": "この症状は複数の状態に該当する可能性があります。正確を期すため、詳しく教えていただけますか？"
       }
     }
   }
